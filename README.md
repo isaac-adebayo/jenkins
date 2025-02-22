@@ -20,10 +20,14 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 7. For 'Branch Specifier', select '*/main' option
 8. Save configuration and run 'Build Now' to connect jenkins to the repository.
 
-### Automating buils with 'Build Trigger' in jenkins using github webhook
+### Automating buils with 'Build Triggers' in jenkins using github webhook
 ---
 1. Github weebhook can be configured to send trigger to jenkins whenever there is a change in the repository contents
 2. Click the 'Configure' menu of the project and click the 'Build Triggers'
+3. Check the 'Github hook trigger for GITScm polling'
+4. Go to the 'Settings' option in the github repository and select 'Webhooks', paste the jenkins server's IP address into the 'Payload URL' textbox of the webhook and append '/github-webhook/' to the pasted IP address, e.g **'https://127.0.0.1:8080/github-webhook/'**
+5. Select 'application/json' for 'Content type'. Select other options as appriopriate
+6. Click 'Add webhook'
 
 ### Reset Jenkins
 ---
