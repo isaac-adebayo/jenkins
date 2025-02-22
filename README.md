@@ -7,7 +7,7 @@
 ```
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
-3. Install the recommended plugins and create first admin user. Input username, password, email etc.<br>**Note:** The username and password created here will be used to login to the server onwards.
+3. Install the suggested plugins and create first admin user. Input username, password, email etc.<br>**Note:** The username and password created here will be used to login to the server onwards.
 
 ### Reset Jenkins
 ---
