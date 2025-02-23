@@ -14,7 +14,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 1. Click on 'New Item' in the jenkins' web UI, input the name of the project and select 'Freestyle project'.
 2. Create a new github repository called jenkins-scm with a README.md file
 3. Connect **'jenkins'** to the **'jenkins-scm'** repository created. On github, ensure you are in the **'main'** branch.
-4. Copy the the 'HTTPS' repository URL from the github web UI.
+4. Copy the the 'HTTPS' repository URL from the github web UI. E.g https://github.com/isaac-adebayo/jenkins-scm.git
 5. Go to the 'Source Code Management' tab under project's configuration menu in the jenkins web UI.
 6. Check the 'Git' radio button and paste the copied repository URL in the 'Repository URL' textbox
 7. For 'Branch Specifier', select '*/main' option
