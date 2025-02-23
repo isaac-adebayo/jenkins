@@ -28,7 +28,40 @@ Jenkins pipeline can be set up using jenkins file which can contain either a dec
 2. **Configure the Github's project URL, Trigger and the Pipeline:** Go to the 'Configure' option of the pipeline job
 3. In the 'General' tab check the 'Github project' checkbox and enter the github's project URL (Do this if the jenkins server has not be previously linked to Github in the 'Freestyle job'
 4.  In the 'Triggers' tab, check the 'Github hook trigger for GITScm polling' checkbox. Otherwise use 'Poll SCM' for local test environment
-5.  
+5.  In the 'Pipeline' tab, pipeline script for build steps for the job can be defined: The Groovy script used to define the pipeline is of the below format:
+    ```
+    pipeline {
+      agent any
+      stages
+      {
+        stage...
+        stage...
+        ...
+      }
+    }
+    
+   - The **'checkout'** step is used to fetch the source code from GitHub into the Jenkins workspace, so the build process can work with the latest code:
+     ```
+     stage('Connect To Github')
+     {
+       steps 
+       {
+          checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/username/repository.git']])
+       }
+     }
+     ```
+  - Build steps involving running shell commands can be implemented using **'sh'** step. E.g
+    ```
+    stage('Build Docker Image')
+    {
+      steps
+      {
+        sh 'docker build -t dockerfile .'
+      }
+    }
+    ```
+**Note:** Each steps can be generated using the 'Pipeline Syntax' option in the pipeline tab
+
 
 ### Automating buils with 'Build Triggers' in jenkins using github webhook
 ---
