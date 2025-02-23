@@ -20,6 +20,16 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 7. For 'Branch Specifier', select '*/main' option
 8. Save configuration and run 'Build Now' to connect jenkins to the repository.
 
+### Jenkins Pipeline job - example
+---
+Jenkins pipeline can be set up using jenkins file which can contain either a declarative pipeline or a scripted pipeline.
+
+1. Click the 'New Item' in the jenkins web UI, enter the job name, select 'Pipeline' option and click 'Ok'
+2. **Configure the Github's project URL, Trigger and the Pipeline:** Go to the 'Configure' option of the pipeline job
+3. In the 'General' tab check the 'Github project' checkbox and enter the github's project URL (Do this if the jenkins server has not be previously linked to Github in the 'Freestyle job'
+4.  In the 'Triggers' tab, check the 'Github hook trigger for GITScm polling' checkbox. Otherwise use 'Poll SCM' for local test environment
+5.  
+
 ### Automating buils with 'Build Triggers' in jenkins using github webhook
 ---
 1. Github weebhook can be configured to send trigger to jenkins whenever there is a change in the repository contents
@@ -29,7 +39,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 5. Select 'application/json' for 'Content type'. Select other options as appriopriate
 6. Click 'Add webhook'
 7. **Note:**<br>
-   **_SCM polling_** can be selected for making jenkins to poll scm directory in a test environment instead of making use of webhook
+   **_Poll SCM_** can be selected for making jenkins to poll scm directory in a test environment instead of making use of webhook
 
 ### Reset Jenkins
 ---
