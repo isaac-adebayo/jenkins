@@ -106,7 +106,7 @@ Jenkins pipeline can be set up using jenkins file which can contain either a dec
 5. Select 'application/json' for 'Content type'. Select other options as appriopriate
 6. Click 'Add webhook'
 7. **Note:**<br>
-   **_Poll SCM_** can be selected for making jenkins to poll scm directory in a test environment instead of making use of webhook
+   **_Poll SCM_** can be selected for making jenkins to poll scm directory in a test environment instead of making use of webhook. E.g 'H/3 * * * *' will poll for change in the SCM directory in every 3 minutes
 
 ### Reset Jenkins
 ---
