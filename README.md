@@ -28,7 +28,8 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 4. Go to the 'Settings' option in the github repository and select 'Webhooks', paste the jenkins server's IP address into the 'Payload URL' textbox of the webhook and append '/github-webhook/' to the pasted IP address, e.g **'https://127.0.0.1:8080/github-webhook/'**
 5. Select 'application/json' for 'Content type'. Select other options as appriopriate
 6. Click 'Add webhook'
-7. **Note:** **_SCM polling_** can be selected for making jenkins to poll scm directory instead of making use of webhook
+7. <u>**Note:**</u>
+   **_SCM polling_** can be selected for making jenkins to poll scm directory instead of making use of webhook
 
 ### Reset Jenkins
 ---
