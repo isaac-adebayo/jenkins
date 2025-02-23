@@ -60,8 +60,34 @@ Jenkins pipeline can be set up using jenkins file which can contain either a dec
       }
     }
     ```
-**Note:** Each steps can be generated using the 'Pipeline Syntax' option in the pipeline tab
-
+**Note:** 
+1. Each steps can be generated using the 'Pipeline Syntax' option in the pipeline tab
+2. Some errors encountered and resolution:
+   - **ERROR: permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker**
+   - Create docker group if not exists
+     ```
+     sudo groupadd docker
+     ```
+   - Add existing user to the docker group
+     ```
+     sudo usermod -aG docker $USER
+     ```
+   - Login back into docker or use the 'newgrp' command to reinitialise the docker group
+     ```
+     newgrp docker
+     ```
+   - **sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper**
+   - Configure sudo to Allow Jenkins User to Run Docker Commands Without a Password
+   - Open the Sudoers File:
+     ```
+     sudo visudo
+     ```
+   - Add the Following Line:
+     ```
+     jenkins ALL=(ALL) NOPASSWD: /usr/bin/docker
+     ```
+   - Save & exit
+  
 
 ### Automating buils with 'Build Triggers' in jenkins using github webhook
 ---
