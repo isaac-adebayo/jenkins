@@ -76,6 +76,14 @@ Jenkins pipeline can be set up using jenkins file which can contain either a dec
      ```
      newgrp docker
      ```
+   - Add Jenkins User to Docker Group
+     ```
+     sudo usermod -aG docker jenkins
+     ```
+   - Restart jenkins services
+     ```
+     sudo systemctl restart jenkins
+     ```
    ### sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
    - Configure sudo to Allow Jenkins User to Run Docker Commands Without a Password
    - Open the Sudoers File:
